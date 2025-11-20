@@ -164,46 +164,213 @@ body {
 .card-title { font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-main); transform: translateZ(15px); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
 .card-text { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; transform: translateZ(10px); font-weight: 500; }
 
-/* --- SECCIÓN DE CONTACTO (Separada) --- */
+/* --- PLANES Y PRECIOS --- */
+.pricing-section { background-color: transparent; position: relative; }
+.pricing-container {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem; align-items: center; max-width: 1100px; margin: 0 auto;
+}
+.pricing-card {
+    background: #ffffff; border-radius: 20px; padding: 3rem 2rem;
+    text-align: center; border: 1px solid rgba(5, 94, 111, 0.05);
+    transition: 0.3s ease; position: relative; box-shadow: var(--shadow-soft);
+}
+.pricing-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); border-color: var(--primary); }
+
+/* Plan Destacado */
+.pricing-card.featured {
+    border: 2px solid var(--primary); transform: scale(1.05); z-index: 2;
+    box-shadow: 0 20px 50px rgba(32, 201, 151, 0.15);
+}
+.pricing-card.featured:hover { transform: scale(1.05) translateY(-10px); }
+
+.popular-tag {
+    position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+    background: var(--gradient); color: white; padding: 5px 15px;
+    border-radius: 20px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;
+}
+.plan-header h3 {
+    color: var(--text-muted); font-size: 1.2rem; font-weight: 600;
+    margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;
+}
+.price {
+    color: var(--text-main); font-size: 3.5rem; font-weight: 800;
+    font-family: 'Montserrat', sans-serif; margin-bottom: 2rem;
+}
+.period { font-size: 1rem; color: var(--text-muted); font-weight: 500; }
+
+.plan-features { list-style: none; margin-bottom: 2.5rem; text-align: left; padding: 0 1rem; }
+.plan-features li {
+    margin-bottom: 1rem; color: var(--text-main); font-size: 0.95rem;
+    display: flex; align-items: flex-start; gap: 10px;
+}
+.plan-features li i { color: var(--primary); margin-top: 4px; }
+
+.bonus-feature {
+    background: rgba(32, 201, 151, 0.08); padding: 10px; border-radius: 8px;
+    color: var(--primary-dark) !important; font-size: 0.85rem !important;
+    border: 1px dashed var(--primary);
+}
+
+.btn-outline {
+    background: transparent; border: 2px solid var(--primary); color: var(--primary-dark);
+    width: 100%; display: inline-block; padding: 0.8rem 2rem; border-radius: 6px;
+    font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;
+    font-size: 0.9rem; transition: 0.3s;
+}
+.btn-outline:hover { background: var(--primary); color: white; }
+
+
+/* --- SECCIÓN DE CONTACTO (IMAGEN + FORMULARIO) --- */
 .contact-section {
-    background-color: var(--bg-deep);
-    padding-top: 4rem; padding-bottom: 5rem;
-    display: flex; justify-content: center;
+    background-color: transparent;
+    padding-top: 4rem; 
+    padding-bottom: 6rem;
+    display: flex; 
+    justify-content: center;
 }
-.container-center { width: 100%; display: flex; justify-content: center; }
 
-.contact-form-wrapper { 
-    width: 100%; max-width: 700px;
-    background: #ffffff; 
-    padding: 3.5rem; 
-    border-radius: 20px; 
-    border: 1px solid rgba(4, 93, 109, 0.1); 
-    box-shadow: 0 20px 50px rgba(4, 93, 109, 0.08);
+.container-center { 
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    max-width: 1100px; /* Ancho máximo para que se vea elegante */
+    margin: 0 auto;
+    padding: 0 20px; /* Margen lateral en móviles */
+}
+
+/* 2. La "Tarjeta" que agrupa Imagen y Formulario */
+.contact-content-wrapper {
+    display: flex; /* Esto pone los elementos lado a lado */
+    width: 100%;
+    background: #ffffff; /* El fondo blanco va AQUÍ, dentro de la tarjeta */
+    border-radius: 20px; /* Bordes redondeados */
+    overflow: hidden;    /* Asegura que la imagen no se salga de los bordes */
+    box-shadow: 0 20px 60px rgba(5, 94, 111, 0.15); /* Sombra elegante */
+    border: 1px solid rgba(5, 94, 111, 0.05);
+}
+
+/* 3. Estilo de la Imagen (Izquierda) */
+.contact-image {
+    flex: 1; /* Ocupa el 50% del espacio */
+    min-height: 100%;
+    position: relative;
+}
+
+.contact-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La imagen llena el espacio sin deformarse */
+    object-position: center;
+    display: block;
+}
+
+/* 4. Estilo del Formulario (Derecha) */
+.contact-form-inner {
+    flex: 1; /* Ocupa el otro 50% */
+    padding: 4rem 3rem; /* Espaciado interno generoso */
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.contact-form-wrapper h3 { 
-    margin-bottom: 0.5rem; color: var(--text-main); 
-    font-weight: 800; font-size: 2.2rem; 
-}
-.contact-form-wrapper p { color: var(--text-muted); margin-bottom: 2.5rem; font-size: 1.1rem; }
 
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+/* Ajustes de texto dentro del form */
+.contact-form-inner h3 { 
+    margin-bottom: 0.5rem; 
+    color: var(--text-main); 
+    font-weight: 800; 
+    font-size: 2rem; 
+}
+
+.contact-form-inner p { 
+    color: var(--text-muted); 
+    margin-bottom: 2rem; 
+    font-size: 1rem; 
+}
+
+/* Inputs del formulario */
+.form-row { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; /* Dos columnas para Nombre y Teléfono */
+    gap: 1.5rem; 
+}
+
 .input-group { margin-bottom: 1.5rem; }
 
 .input-group input, .input-group select {
-    width: 100%; padding: 16px; 
-    background: #F8F9FA; 
-    border: 1px solid #DEE2E6;
+    width: 100%; padding: 15px; 
+    background: #F9FAFB; 
+    border: 1px solid #E5E7EB; 
     border-radius: 8px; 
     color: var(--text-main); 
     font-family: 'Montserrat', sans-serif;
-    outline: none; transition: 0.3s; font-size: 0.95rem;
+    outline: none; transition: 0.3s; 
 }
+
 .input-group input:focus, .input-group select:focus { 
-    border-color: var(--primary); background: #ffffff; 
-    box-shadow: 0 0 0 4px rgba(32, 201, 151, 0.1); 
+    border-color: var(--primary); 
+    background: #ffffff; 
+    box-shadow: 0 0 0 3px rgba(32, 201, 151, 0.15); 
 }
-.btn-submit { width: 100%; margin-top: 10px; padding: 1.2rem; font-size: 1rem; letter-spacing: 1px; }
+
+/* Botón */
+/* Botón ENVIAR (Estilo igual a Clase de Prueba) */
+.btn-submit { 
+    background: var(--gradient); /* Usa el mismo degradado Menta/Verde */
+    width: 100%; 
+    margin-top: 1rem; 
+    padding: 1rem; 
+    font-size: 1rem; 
+    letter-spacing: 1px; 
+    border-radius: 6px;
+    
+    /* Aseguramos las propiedades base por si acaso */
+    color: white;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-submit:hover { 
+    /* Misma animación de elevación y brillo turquesa */
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 25px rgba(32, 201, 151, 0.4); 
+}
+
+/* --- RESPONSIVE (Para celular) --- */
+@media (max-width: 992px) {
+    .contact-content-wrapper {
+        flex-direction: column; /* Pone la imagen arriba y el form abajo */
+    }
+    .contact-image {
+        height: 250px; /* Altura fija para la imagen en móvil */
+    }
+    .contact-form-inner {
+        padding: 2.5rem 1.5rem;
+    }
+    .form-row { grid-template-columns: 1fr; } /* Inputs uno debajo del otro */
+}
+
+/* --- RESPONSIVE CONTACTO --- */
+@media (max-width: 992px) {
+    .contact-content-wrapper {
+        flex-direction: column; /* En tablets/móviles, pone uno arriba del otro */
+    }
+    
+    .contact-image {
+        height: 300px; /* Altura fija para la imagen en móvil */
+        width: 100%;
+    }
+    
+    .contact-form-inner {
+        padding: 2rem 1.5rem;
+    }
+    
+    .form-row { grid-template-columns: 1fr; }
+}
 
 /* --- FOOTER (Separado) --- */
 .footer-section { 
