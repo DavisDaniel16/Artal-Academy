@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 3. MENU SCROLL SPY (CORREGIDO PARA FOOTER) ---
+    // --- 3. MENU SCROLL SPY ---
     const nav = document.querySelector('.navbar');
     const sections = document.querySelectorAll('section, footer'); 
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -86,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // --- CORRECCIÓN CLAVE: DETECTAR FINAL DE PÁGINA ---
-        // Si el usuario ha scrolleado hasta abajo, forzamos que 'ubicacion' sea el actual.
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
             current = 'ubicacion';
         }
