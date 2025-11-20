@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artal Academy | Tú Defines el Reto</title>
+    <meta name="description" content="Academia de música en Vía a la Costa. Clases de Piano, Batería, Guitarra, Canto y Violín.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="waveCanvas"></canvas>
+
+    <nav class="navbar">
+        <a href="#inicio" class="brand">
+            <img src="Logo/Artalacademy.png" alt="Artal Academy Logo" class="brand-img">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#inicio" class="active">Inicio</a></li>
+            <li><a href="#metodologia">Metodología</a></li>
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#contacto">Contacto</a></li>   
+            <li><a href="#ubicacion">Ubicación</a></li>
+        </ul>
+        <a href="#contacto" class="btn-cta">Clase de Prueba</a>
+    </nav>
+
+    <section id="inicio" class="hero section">
+        <div class="hero-content">
+            <span class="hero-subtitle">Academia de Música</span>
+            <h1 class="hero-title">TÚ DEFINES <br><span class="text-gradient">EL RETO</span></h1>
+            <p class="hero-desc">
+                Descubre tu potencial musical en el mejor ambiente de Vía a la Costa. Formación profesional en instrumentos y canto.
+            </p>
+            <div class="hero-buttons">
+                <a href="#cursos" class="btn-cta" style="margin-right: 15px;">Ver Cursos</a>
+                <a href="https://www.instagram.com/artalacademy_ec" target="_blank" class="video-link"><i class="fab fa-instagram"></i> artalacademy_ec</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="metodologia" class="stats-bar">
+        <div class="stat-item">
+            <i class="fas fa-calendar-check stat-icon"></i>
+            <span class="stat-number">2</span>
+            <span class="stat-label">Clases por Semana</span>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-clock stat-icon"></i>
+            <span class="stat-number">45</span>
+            <span class="stat-label">Minutos por Clase</span>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-book-open stat-icon"></i>
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Práctica y Teoría</span>
+        </div>
+    </section>
+
+    <section id="cursos" class="section programs-section">
+        <div class="section-header">
+            <h2>Nuestros Cursos</h2>
+            <div class="line"></div>
+            <p class="section-desc">Elige tu instrumento y comienza tu viaje.</p>
+        </div>
+
+        <div class="cards-container">
+            <div class="program-card" data-tilt>
+                <div class="card-icon"><i class="fas fa-music"></i></div>
+                <h3 class="card-title">Piano</h3>
+                <p class="card-text">Desarrolla técnica, lectura y expresión musical en nuestros pianos de alta calidad.</p>
+            </div>
+            <div class="program-card" data-tilt>
+                <div class="card-icon"><i class="fas fa-drum"></i></div>
+                <h3 class="card-title">Batería</h3>
+                <p class="card-text">Domina el ritmo, la coordinación y la potencia en un entorno insonorizado profesional.</p>
+            </div>
+            <div class="program-card" data-tilt>
+                <div class="card-icon"><i class="fas fa-guitar"></i></div>
+                <h3 class="card-title">Guitarra</h3>
+                <p class="card-text">Desde acordes básicos hasta solos complejos. Guitarra acústica y eléctrica.</p>
+            </div>
+            <div class="program-card" data-tilt>
+                <div class="card-icon"><i class="fas fa-microphone-alt"></i></div>
+                <h3 class="card-title">Canto</h3>
+                <p class="card-text">Encuentra tu voz propia, mejora tu afinación y proyección escénica.</p>
+            </div>
+            <div class="program-card" data-tilt>
+                <div class="card-icon"><i class="fas fa-italic"></i></div>
+                <h3 class="card-title">Violín</h3>
+                <p class="card-text">Elegancia y disciplina. Aprende la técnica del arco y la lectura clásica.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section contact-section">
+        <div class="container-center">
+            <div class="contact-form-wrapper">
+                <div class="form-header">
+                    <h3>Agenda tu Clase</h3>
+                    <p>Déjanos tus datos y nos pondremos en contacto contigo.</p>
+                </div>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <input type="text" placeholder="Nombre del Alumno" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="tel" placeholder="Teléfono / WhatsApp" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <select>
+                            <option value="" disabled selected>Instrumento de interés</option>
+                            <option value="piano">Piano</option>
+                            <option value="bateria">Batería</option>
+                            <option value="guitarra">Guitarra</option>
+                            <option value="canto">Canto</option>
+                            <option value="violin">Violín</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-cta btn-submit">ENVIAR MENSAJE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer id="ubicacion" class="section footer-section">
+        <div class="footer-info-bar">
+            <div class="footer-col brand-col">
+                <img src="Logo/Artalacademy.png" alt="Artal Logo Footer" class="footer-logo">
+            </div>
+
+            <div class="footer-col address-col">
+                <h5>Ubicación</h5>
+                <p>
+                    Km. 12.5 Vía a la Costa<br>
+                    C.C. Laguna Plaza, Local #306<br>
+                    Guayaquil, Ecuador
+                </p>
+            </div>
+            
+            <div class="footer-col contact-col">
+                <h5>Contacto</h5>
+                <div class="contact-links">
+                    <a href="https://wa.me/593994678914" target="_blank"><i class="fab fa-whatsapp"></i> +593 99 467 8914</a>
+                    <a href="https://www.instagram.com/artalacademy_ec" target="_blank"><i class="fab fa-instagram"></i> artalacademy_ec</a>
+                    <a href="#"><i class="fas fa-globe"></i> www.artalacademy.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Artal Academy. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
